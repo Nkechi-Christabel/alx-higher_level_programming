@@ -11,7 +11,7 @@ a = int(argv[1])
 op = argv[2]
 b = int(argv[3])
 
-ops = {'+': add,'-': sub,'*': mul,'/': div}
+ops = {'+': add, '-': sub, '*': mul, '/': div}
 
 if op in ops:
     result = ops[op](a, b)
