@@ -5,10 +5,7 @@ if __name__ == "__main__":
 len = len(argv)
 sum = 0
 
-if len < 2:
-    print("0")
-else:
-    for i in range(1, len):
-        sum += int(argv[i])
+for i in range(1, len):
+    sum += int(argv[i])
 
 print("{:d}".format(sum))
