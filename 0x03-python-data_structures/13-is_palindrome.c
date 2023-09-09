@@ -19,7 +19,7 @@ void push(int *stack, int *top, int value)
  */
 int pop(int *stack, int *top)
 {
-	return stack[(*top)--];
+	return (stack[(*top)--]);
 }
 
 /**
@@ -31,27 +31,28 @@ int pop(int *stack, int *top)
 int is_palindrome(listint_t **head)
 {
 	int stack[1000], top = -1;
+
 	if (*head == NULL || (*head)->next == NULL)
 		return (1);
 
-    listint_t *slow = *head, *fast = *head;
+	listint_t *slow = *head, *fast = *head;
 
-    while (fast != NULL && fast->next != NULL)
-    {
-	    push(stack, &top, slow->n);
-	    slow = slow->next;
-	    fast = fast->next->next;
-    }
+	while (fast != NULL && fast->next != NULL)
+	{
+		push(stack, &top, slow->n);
+		slow = slow->next;
+		fast = fast->next->next;
+	}
 
-    if (fast != NULL)
-	    slow = slow->next;
+	if (fast != NULL)
+		slow = slow->next;
 
-    while (slow != NULL)
-    {
-	    if (slow->n != pop(stack, &top))
-		    return (0);
-	    slow = slow->next;
-    }
+	while (slow != NULL)
+	{
+		if (slow->n != pop(stack, &top))
+			return (0);
+		slow = slow->next;
+	}
 
-    return (1);
+	return (1);
 }
