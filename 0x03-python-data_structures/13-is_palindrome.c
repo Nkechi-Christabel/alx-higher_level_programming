@@ -3,28 +3,6 @@
 #include "lists.h"
 
 /**
- * push - Push an element onto the stack.
- * @stack: Pointer to the stack (array).
- * @top: Pointer to the top index of the stack.
- * @value: Value to push onto the stack.
- */
-void push(int *stack, int *top, int value)
-{
-	stack[++(*top)] = value;
-}
-
-/**
- * pop - Pop an element from the stack.
- * @stack: Pointer to the stack (array).
- * @top: Pointer to the top index of the stack.
- * Return: The popped value.
- */
-int pop(int *stack, int *top)
-{
-	return (stack[(*top)--]);
-}
-
-/**
  * is_palindrome - Check if a singly linked list is a palindrome.
  * @head: Pointer to a pointer to the head of the linked list.
  *
@@ -57,4 +35,26 @@ int is_palindrome(listint_t **head)
 	}
 
 	return (1);
+}
+
+/**
+ * push - Push an element onto the stack.
+ * @stack: Pointer to the stack (array).
+ * @top: Pointer to the top index of the stack.
+ * @value: Value to push onto the stack.
+ */
+void push(int *stack, int *top, int value)
+{
+	stack[++(*top)] = value;
+}
+
+/**
+ * pop - Pop an element from the stack.
+ * @stack: Pointer to the stack (array).
+ * @top: Pointer to the top index of the stack.
+ * Return: The popped value.
+ */
+int pop(int *stack, int *top)
+{
+	return (stack[(*top)--]);
 }
