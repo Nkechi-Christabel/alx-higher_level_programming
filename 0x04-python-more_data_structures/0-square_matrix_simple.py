@@ -4,4 +4,4 @@
 
 
 def square_matrix_simple(matrix=[]):
-    return ([list(map(lambda n: n * n, row)) for row in matrix])
+    return ([[n * n for n in row] for row in matrix])
