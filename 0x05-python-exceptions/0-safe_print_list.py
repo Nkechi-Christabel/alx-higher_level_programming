@@ -14,8 +14,8 @@ Returns:
 def safe_print_list(my_list=[], x=0):
     count = 0
     try:
-        for i in range(x):
-            print(my_list[i], end="")
+        for el in my_list[:x]:
+            print(el, end="")
             count += 1
     except IndexError:
         pass
