@@ -1,49 +1,54 @@
 #include <Python.h>
-#include <stdio.h>
 
 void print_python_list(PyObject *p) {
+    // Check if the object is a valid PyListObject.
     if (!PyList_Check(p)) {
-        fprintf(stderr, "Invalid PyListObject\n");
+        printf("Not a valid PyListObject.\n");
         return;
     }
 
-    printf("[*] Python list info\n");
-    printf("[*] Size of the Python List = %zd\n", ((PyVarObject *)p)->ob_size);
+    // Get the size of the list.
+    int size = PyList_Size(p);
 
-    printf("[*] Allocated = %zd\n", ((PyListObject *)p)->allocated);
-
-    for (Py_ssize_t i = 0; i < ((PyVarObject *)p)->ob_size; i++) {
+    // Print the list information.
+    printf("List size: %d\n", size);
+    printf("List items:\n");
+    for (int i = 0; i < size; i++) {
         PyObject *item = PyList_GetItem(p, i);
-        printf("Element %zd: %s\n", i, Py_TYPE(item)->tp_name);
+        printf("  * %s\n", PyUnicode_AsUTF8(item));
     }
 }
 
 void print_python_bytes(PyObject *p) {
+    // Check if the object is a valid PyBytesObject.
     if (!PyBytes_Check(p)) {
-        fprintf(stderr, "Invalid PyBytesObject\n");
+        printf("Not a valid PyBytesObject.\n");
         return;
     }
 
-    printf("[.] bytes object info\n");
-    printf("  size: %zd\n", ((PyVarObject *)p)->ob_size);
-    printf("  trying string: %s\n", PyBytes_AS_STRING(p));
-    printf("  first %zd bytes: ", ((PyVarObject *)p)->ob_size < 10 ? ((PyVarObject *)p)->ob_size : 10);
-    for (Py_ssize_t i = 0; i < ((PyVarObject *)p)->ob_size && i < 10; i++) {
-        printf("%02x", (unsigned char)PyBytes_AS_STRING(p)[i]);
-        if (i < 9 && i < ((PyVarObject *)p)->ob_size - 1)
-            printf(" ");
+    // Get the size of the bytes object.
+    int size = PyBytes_GET_SIZE(p);
+
+    // Print the bytes object information.
+    printf("Bytes size: %d\n", size);
+    printf("First %d bytes: ", 10);
+    for (int i = 0; i < 10 && i < size; i++) {
+        printf("%02x ", PyBytes_AS_STRING(p)[i]);
     }
     printf("\n");
 }
 
 void print_python_float(PyObject *p) {
+    // Check if the object is a valid PyFloatObject.
     if (!PyFloat_Check(p)) {
-        fprintf(stderr, "Invalid PyFloatObject\n");
+        printf("Not a valid PyFloatObject.\n");
         return;
     }
 
-    printf("[.] float object info\n");
-    printf("  value: %f\n", ((PyFloatObject *)p)->ob_fval);
-}
+    // Get the value of the float object.
+    double value = PyFloat_AS_DOUBLE(p);
 
+    // Print the float object information.
+    printf("Float value: %g\n", value);
+}
 
