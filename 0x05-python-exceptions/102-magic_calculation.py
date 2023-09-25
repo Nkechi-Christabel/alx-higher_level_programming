@@ -12,11 +12,11 @@ def magic_calculation(a, b):
         The result of the calculation, which may vary based on conditions:
         - If 'i' exceeds 'a', an exception is raised with a message 'Too far',
           and the result becomes 'b + a'.
-        - Otherwise, it calculates (a ** b) / i for 'i' in the range [1, 2, 3]
+        - Otherwise, it calculates (a ** b) / i for 'i' in the range [1, 2]
           and accumulates the results.
     """
     result = 0
-    for i in range(1, 4):
+    for i in range(1, 3):
         try:
             if i > a:
                 raise Exception("Too far")
