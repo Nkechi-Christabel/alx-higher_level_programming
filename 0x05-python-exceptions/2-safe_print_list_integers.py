@@ -13,11 +13,11 @@ Returns:
 
 def safe_print_list_integers(my_list=[], x=0):
     count = 0
-    for el in my_list[:x]:
+    for i in range(x):
         try:
-            print("{:d}".format(el), end="")
+            print("{:d}".format(my_list[i]), end="")
             count += 1
-        except (ValueError, TypeError):
+        except (ValueError, TypeError, IndexError):
             pass
     print()
     return (count)
