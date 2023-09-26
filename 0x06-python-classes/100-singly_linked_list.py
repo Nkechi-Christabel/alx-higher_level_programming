@@ -19,8 +19,8 @@ class Node:
             data (int): The integer data to store in the node.
             next_node (Node, optional): The next node in the linked list.
         """
-        self.__data = data
-        self.__next_node = next_node
+        self.data = data
+        self.next_node = next_node
 
     @property
     def data(self):
@@ -71,6 +71,7 @@ class Node:
         """
         if value is not None and not isinstance(value, Node):
             raise TypeError("next_node must be a Node object")
+        self.__next_node = value
 
 
 class SinglyLinkedList:
@@ -103,7 +104,7 @@ class SinglyLinkedList:
             self.head = new_node
         else:
             current = self.head
-            while current.next_node is not None and current.next_node.data < value:
+            while current.next_node and current.next_node.data < value:
                 current = current.next_node
             new_node.next_node = current.next_node
             current.next_node = new_node
