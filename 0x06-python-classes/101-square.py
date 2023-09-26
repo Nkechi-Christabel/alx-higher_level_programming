@@ -114,7 +114,7 @@ class Square:
         sqr_rows.extend([" " * self.__position[0] + "#" * self.__size] *
                         self.__size)
 
-        return "\n".join(square_rows)
+        return "\n".join(sqr_rows)
 
     def __str__(self):
         """
