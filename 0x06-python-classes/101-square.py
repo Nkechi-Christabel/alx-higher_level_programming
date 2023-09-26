@@ -97,11 +97,14 @@ class Square:
 
     def my_print(self):
         """
-        Prints a representation of the square with '#' character to the stdout.
+        Returns a string representation of the square with '#' characters.
 
-        If the size of the square is 0, it prints an empty line. Otherwise, it
-        prints the square with respect to the 'position' attribute by adding
+        If the size of the square is 0, return an empty string. Otherwise, it
+        returns the square with respect to the 'position' attribute by adding
         the specified number of spaces before the '#' characters.
+
+        Returns:
+            str: A string representation of the square.
         """
         if self.__size == 0:
             return ""
