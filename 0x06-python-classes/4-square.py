@@ -3,7 +3,7 @@
 """
 This module defines a class Square that represents a square.
 
-It is based on the based on 2-square.py
+It is based on the based on 3-square.py
 """
 
 
