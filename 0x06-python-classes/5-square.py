@@ -76,4 +76,5 @@ class Square:
 
         If size is 0, no output is printed.
         """
-        print('\n'.join(['#' * self.__size for _ in range(self.__size)]) if self.__size != 0 else '')
+        print('\n'.join(['#' * self.__size for _ in range(self.__size)]) if
+              self.__size else '')
