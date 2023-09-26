@@ -1,16 +1,27 @@
 #!/usr/bin/python3
 
-"""class Square that defines a square by:
-(based on 0-square.py)"""
+"""
+This module defines a class Square that represents a square.
+
+It is based on the 0-square.py module.
+"""
 
 
 class Square:
-    """Initialising the instance of class Square.
+    """
+    Initializes an instance of the Square class.
 
     Args:
-        size: Private instance attribute.
+        size (int): The size of the square.
 
+    Attributes:
+        __size (int): A private instance attribute representing the size of the square.
     """
     def __init__(self, size):
-        """Initializing __size to args size"""
+        """
+        Initializes the Square object with the provided size.
+
+        Args:
+            size (int): The size of the square.
+        """
         self.__size = size
