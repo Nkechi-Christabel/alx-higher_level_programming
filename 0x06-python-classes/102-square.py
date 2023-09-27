@@ -1,5 +1,12 @@
 #!/usr/bin/python3
 
+"""
+This module defines a class Square that represents a square.
+
+It is based on the based on 4-square.py
+"""
+
+
 class Square:
     """
     Represents a square shape with a specified size.
