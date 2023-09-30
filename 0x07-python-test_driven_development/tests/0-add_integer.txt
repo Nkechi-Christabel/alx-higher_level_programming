@@ -8,7 +8,7 @@ is thrown.
 Usage
 =====
 
-Importing function from the module:
+Import "add_integer" from the "0-add_integer" module:
 >>> add_integer = __import__('0-add_integer').add_integer
 
 # Test 1: Adding two positive integers
