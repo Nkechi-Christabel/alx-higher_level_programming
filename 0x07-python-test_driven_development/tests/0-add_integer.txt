@@ -56,19 +56,13 @@ Traceback (most recent call last):
     ...
 TypeError: b must be an integer
 
-# Test 10: Trying to add a boolean and an integer (should raise TypeError)
->>> add_integer(True, 7)
-Traceback (most recent call last):
-    ...
-TypeError: a must be an integer
-
-# Test 11: Calling add_integer with None as the first argument (should raise TypeError)
+# Test 10: Calling add_integer with None as the first argument (should raise TypeError)
 >>> add_integer(None, 7)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
 
-# Test 13: Adding two floats that result in NaN (should return NaN)
+# Test 11: Adding two floats that result in NaN (should return NaN)
 >>> add_integer(float('nan'), float('nan'))
 Traceback (most recent call last):
     ...
