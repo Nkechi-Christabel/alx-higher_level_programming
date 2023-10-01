@@ -3,8 +3,8 @@
 
 The 2-matrix_divided module divides all elements of a matrix by a given number.
 
-Usage
-=====
+Test cases
+==========
 
 Import "matrix_divided" from the "2-matrix_divided" module:
 >>> matrix_divided = __import__('2-matrix_divided').matrix_divided

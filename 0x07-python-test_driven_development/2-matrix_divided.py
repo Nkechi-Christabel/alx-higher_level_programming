@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
 """
-This is "matrix_divided" module.
+This is "2-matrix_divided" module.
 
-The matrix_divided supplies one function, matrix_divided(), that divides
+The 2-matrix_divided supplies one function, matrix_divided(), that divides
 all elements of a matrix.
 """
 
@@ -33,7 +33,7 @@ def matrix_divided(matrix, div):
         raise ZeroDivisionError("division by zero")
 
     if not all(isinstance(row, list) and all(isinstance(x, (int, float))
-                            for x in row) for row in matrix):
+                                             for x in row) for row in matrix):
         raise TypeError("matrix must be a matrix (list of lists)"
                         "of integers/floats")
     if not all(len(row) == len(matrix[0]) for row in matrix):

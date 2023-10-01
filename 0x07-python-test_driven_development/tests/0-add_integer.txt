@@ -19,7 +19,7 @@ Checking for function docstring:
 >>> len(f) > 1
 True
 
-Test Cases
+Test cases
 ==========
 
 Import "add_integer" from the "0-add_integer" module:
