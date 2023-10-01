@@ -5,8 +5,23 @@ The 0-add_integer module adds two integers. The values
 provided must be only integers of float, otherwise, TypeError 
 is thrown.
 
-Usage
-=====
+Docstring Checks
+================
+Checking for module docstring:
+
+>>> m = __import__("0-add_integer").__doc__
+>>> len(m) > 1
+True
+
+Checking for function docstring:
+
+>>> f = __import__("0-add_integer").add_integer.__doc__
+>>> len(f) > 1
+True
+
+===============
+Test Cases
+================
 
 Import "add_integer" from the "0-add_integer" module:
 >>> add_integer = __import__('0-add_integer').add_integer

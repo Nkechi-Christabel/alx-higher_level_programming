@@ -31,6 +31,13 @@ Traceback (most recent call last):
     ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
+>>> matrix = []
+>>> div = 3
+>>> print(matrix_divided(matrix, div))
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
 # Test 4: Dividing a matrix with rows of different sizes (should raise TypeError)
 >>> matrix = [[1, 2, 3], [4, 5], [7, 8, 9]]
 >>> div = 2

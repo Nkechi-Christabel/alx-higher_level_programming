@@ -1,5 +1,13 @@
 #!/usr/bin/python3
 
+"""
+This is "matrix_divided" module.
+
+The matrix_divided supplies one function, matrix_divided(), that divides
+all elements of a matrix.
+"""
+
+
 def matrix_divided(matrix, div):
     """
     Divides all elements of a matrix by a given number.
@@ -9,7 +17,8 @@ def matrix_divided(matrix, div):
         div (int or float): The number to divide all elements by.
 
     Returns:
-        list of lists: A new matrix with elements divided by div, rounded to 2 decimal places.
+        list of lists: A new matrix with elements divided by div, rounded to
+        2 decimal places.
 
     Raises:
         TypeError: If matrix is not a list of lists of integers or floats,
