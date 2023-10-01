@@ -39,19 +39,21 @@ Import "add_integer" from the "0-add_integer" module:
 >>> add_integer(1.2, 1.2)
 2
 
-# Test 8: Adding two floats with both as the default value
+# Test 8: Calling add_integer with no arguments (should raise TypeError)
 >>> add_integer()
-196
+Traceback (most recent call last):
+    ...
+TypeError: add_integer() missing 1 required positional argument: 'a'
 
 # Test 9: Trying to add a string and an integer (should raise TypeError)
 >>> add_integer("5", 7)
 Traceback (most recent call last):
     ...
-TypeError: a must be an integer or b must be an integer
+TypeError: a must be an integer
 
 # Test 10: Trying to add a boolean and an integer (should raise TypeError)
 >>> add_integer(True, 7)
 Traceback (most recent call last):
     ...
-TypeError: a must be an integer or b must be an integer
+TypeError: a must be an integer
 
