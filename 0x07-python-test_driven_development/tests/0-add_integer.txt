@@ -57,3 +57,14 @@ Traceback (most recent call last):
     ...
 TypeError: a must be an integer
 
+# Test 11: Calling add_integer with None as the first argument (should raise TypeError)
+>>> add_integer(None, 7)
+Traceback (most recent call last):
+    ...
+TypeError: a must be an integer
+
+# Test 13: Adding two floats that result in NaN (should return NaN)
+>>> add_integer(float('nan'), float('nan'))
+Traceback (most recent call last):
+    ...
+ValueError: cannot convert float NaN to integer
