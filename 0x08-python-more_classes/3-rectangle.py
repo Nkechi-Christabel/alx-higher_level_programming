@@ -99,8 +99,8 @@ class Rectangle:
             int: The perimeter of the rectangle.
         """
         if self.width == 0 or self.height == 0:
-            return 0
-        return 2 * (self.width + self.height)
+            return (0)
+        return (2 * (self.width + self.height))
 
     def __str__(self):
         """
