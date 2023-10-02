@@ -20,8 +20,8 @@ class Rectangle:
         Initialize a new Rectangle instance.
 
         Args:
-            width (int, optional): The width of the rectangle (default is 0).
-            height (int, optional): The height of the rectangle (default is 0).
+            width (int, optional): The width of the rectangle.
+            height (int, optional): The height of the rectangle.
         """
         self.width = width
         self.height = height
@@ -62,7 +62,7 @@ class Rectangle:
         Returns:
             int: The height of the rectangle.
         """
-        return (self.__height)
+        return self.__height
 
     @height.setter
     def height(self, value):
@@ -89,7 +89,7 @@ class Rectangle:
         Returns:
             int: The area of the rectangle.
         """
-        return (self.width * self.height)
+        return self.width * self.height
 
     def perimeter(self):
         """
@@ -99,12 +99,13 @@ class Rectangle:
             int: The perimeter of the rectangle.
         """
         if self.width == 0 or self.height == 0:
-            return (0)
-        return (2 * (self.width + self.height))
+            return 0
+        return 2 * (self.width + self.height)
 
     def __str__(self):
         """
-        Return a string representation of the rectangle using '#' characters.
+        Return a string representation of the rectangle using '#'
+        characters.
 
         Returns:
             str: A string representation of the rectangle.
@@ -112,4 +113,4 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return ""
         rect_str = ""
-        return('\n'.join(['#' * self.__width for _ in range(self.__height)]))
+        return '\n'.join(['#' * self.__width for _ in range(self.__height)])
