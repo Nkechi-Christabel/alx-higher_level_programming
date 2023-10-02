@@ -149,7 +149,7 @@ class Rectangle:
             Rectangle: The rectangle with the greater area, or rect_1 if
             they have
             the same area.
-        """u
+        """
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
