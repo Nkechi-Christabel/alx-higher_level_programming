@@ -51,4 +51,3 @@ text
 
 # Test 5: Printing an empty string (should result in an empty output)
 >>> text_indentation("")
-

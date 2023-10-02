@@ -16,9 +16,9 @@ def text_indentation(text):
 
     for ch in text:
         if ch in ".?:":
-            string += "\n\n"
+            string += '\n\n'
         else:
             string += ch
 
-    rmv_ldn_space = [paragraphs.strip() for paragraphs in string.split('\n\n')]
-    
+    lines = [line.strip() for line in string.split('\n')]
+    print('\n'.join(lines))
