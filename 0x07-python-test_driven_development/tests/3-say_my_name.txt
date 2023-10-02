@@ -1,4 +1,4 @@
-Test cases for say_my_name function
+# Test cases for say_my_name function
 ======================================
 
 The 3-say_my_name module prints the full name as "My name is <first name> <last name>".
@@ -6,7 +6,7 @@ The 3-say_my_name module prints the full name as "My name is <first name> <last 
 Test Cases
 ==========
 
-Import "say_my_name" from the "3-say_my_name" module:
+# Import "say_my_name" from the "3-say_my_name" module
 >>> say_my_name = __import__('3-say_my_name').say_my_name
 
 # Test 1: Printing the full name with both first name and last name
@@ -15,7 +15,7 @@ My name is John Doe
 
 # Test 2: Printing the full name with only the first name
 >>> say_my_name("Alice")
-My name is Alice
+My name is Alice 
 
 # Test 3: Printing the full name with non-string first name (should raise TypeError)
 >>> say_my_name(123, "Smith")
@@ -31,7 +31,7 @@ TypeError: last_name must be a string
 
 # Test 5: Printing the full name with empty first name and last name
 >>> say_my_name("", "")
-My name is 
+My name is  
 
 # Test 6: Printing the full name with no arguments (should raise TypeError)
 >>> say_my_name()
