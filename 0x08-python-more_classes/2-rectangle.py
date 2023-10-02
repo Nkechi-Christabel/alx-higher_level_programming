@@ -6,7 +6,6 @@ This module defines a class Rectangle.
 It is based on the 1-rectangle.py  module.
 """
 
-
 class Rectangle:
     """A class that defines a rectangle."""
 
@@ -93,4 +92,6 @@ class Rectangle:
         Returns:
             int: The perimeter of the rectangle.
         """
+        if self.width == 0 or self.height == 0:
+            return 0
         return 2 * (self.width + self.height)
