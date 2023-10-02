@@ -3,7 +3,7 @@
 """
 This module defines a class Rectangle.
 
-It is based on the 1-rectangle.py module.
+It is based on the 2-rectangle.py module.
 """
 
 
@@ -96,3 +96,15 @@ class Rectangle:
         if self.width == 0 or self.height == 0:
             return 0
         return 2 * (self.width + self.height)
+
+    def __str__(self):
+        """
+        Return a string representation of the rectangle using '#' characters.
+
+        Returns:
+            str: A string representation of the rectangle.
+        """
+        if self.width == 0 or self.height == 0:
+            return ""
+        rect_str = ""
+        return('\n'.join(['#' * self.__width for _ in range(self.__height)]))
