@@ -1,0 +1,54 @@
+# Test cases for text_indentation function
+==========================================
+
+The text_indentation function prints a text with 2 new lines after each of these characters: ., ? and :.
+
+Test Cases
+==========
+
+# Import "text_indentation" from the "5-text_indentation" module
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Test 1: Printing text with sentences separated by periods
+>>> text_indentation("This is a sentence. This is another sentence.")
+This is a sentence
+<BLANKLINE>
+This is another sentence.
+<BLANKLINE>
+
+# Test 2: Printing text with sentences separated by question marks
+>>> text_indentation("How are you today? What do you think?")
+How are you today
+<BLANKLINE>
+What do you think
+<BLANKLINE>
+
+# Test 3: Printing text with sentences separated by colons
+>>> text_indentation("The details are as follows: First, this. Second, that: Third, the other.")
+The details are as follows
+<BLANKLINE>
+First, this
+<BLANKLINE>
+Second, that
+<BLANKLINE>
+Third, the other
+<BLANKLINE>
+
+# Test 4: Printing text with multiple characters between separators
+>>> text_indentation("Hello...world?This:is::a:text")
+Hello
+<BLANKLINE>
+world
+<BLANKLINE>
+This
+<BLANKLINE>
+is
+<BLANKLINE>
+a
+<BLANKLINE>
+text
+<BLANKLINE>
+
+# Test 5: Printing an empty string (should result in an empty output)
+>>> text_indentation("")
+
