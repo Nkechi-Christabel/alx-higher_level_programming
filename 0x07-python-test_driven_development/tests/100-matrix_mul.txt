@@ -7,7 +7,7 @@ Test cases
 =========
 
 Import `matrix_mul` from the appropriate module:
->>> matrix_mul = __import__('100-matrix_mul').matrix_mul  # Replace 'your_module' with the actual module name
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
 
 # Test 1: Multiplying two valid matrices
 >>> m_a = [[1, 2], [3, 4]]
