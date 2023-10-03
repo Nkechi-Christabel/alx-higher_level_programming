@@ -28,5 +28,5 @@ def lazy_matrix_mul(m_a, m_b):
     except ValueError:
         raise ValueError("m_a and m_b can't be multiplied")
     except TypeError:
-        raise TypeError("m_a should contain only integers or floats or m_b
-                        should contain only integers or floats")
+        raise TypeError("m_a should contain only integers or floats or m_b"
+                        " should contain only integers or floats")
