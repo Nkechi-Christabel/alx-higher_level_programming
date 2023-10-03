@@ -9,45 +9,51 @@ Test Cases
 # Import "text_indentation" from the "5-text_indentation" module
 >>> text_indentation = __import__('5-text_indentation').text_indentation
 
-# Test 1: Printing text with sentences separated by periods
->>> text_indentation("This is a sentence. This is another sentence.")
-This is a sentence
+# Test 1: Basic test with punctuation
+>>> text_indentation("Hello. How are you? I am fine: Thank you!")
+Hello.
 <BLANKLINE>
-This is another sentence.
+How are you?
 <BLANKLINE>
+I am fine:
+<BLANKLINE>
+Thank you!
 
-# Test 2: Printing text with sentences separated by question marks
+# Test 2: Text without punctuation
+>>> text_indentation("This is a test.")
+This is a test.
+
+# Test 3: Punctuation without spaces
+>>> text_indentation("NoSpacesHere: This.is: a test.")
+NoSpacesHere:
+<BLANKLINE>
+This.
+<BLANKLINE>
+is:
+<BLANKLINE>
+a test.
+
+# Test 4: Printing text with sentences separated by question marks
 >>> text_indentation("How are you today? What do you think?")
-How are you today
+How are you today?
 <BLANKLINE>
-What do you think
-<BLANKLINE>
-
-# Test 3: Printing text with sentences separated by colons
->>> text_indentation("The details are as follows: First, this. Second, that: Third, the other.")
-The details are as follows
-<BLANKLINE>
-First, this
-<BLANKLINE>
-Second, that
-<BLANKLINE>
-Third, the other
+What do you think?
 <BLANKLINE>
 
-# Test 4: Printing text with multiple characters between separators
->>> text_indentation("Hello...world?This:is::a:text")
-Hello
-<BLANKLINE>
-world
-<BLANKLINE>
-This
-<BLANKLINE>
-is
-<BLANKLINE>
-a
-<BLANKLINE>
-text
-<BLANKLINE>
-
-# Test 5: Printing an empty string (should result in an empty output)
+# Test 5: Empty input text
 >>> text_indentation("")
+
+# Test 6: Input with spaces at the beginning and end of lines
+>>> text_indentation("   This has   spaces at   the edges.   ")
+This has   spaces at   the edges.
+
+# Test 7: Input with a single character
+>>> text_indentation("X")
+X
+
+# Test 8: Input with no spaces or punctuation
+>>> text_indentation("NoSpacesOrPunctuation")
+NoSpacesOrPunctuation
+
+# Test 9: Input with only spaces
+>>> text_indentation("         ")
