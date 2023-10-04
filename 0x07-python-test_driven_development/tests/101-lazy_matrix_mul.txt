@@ -82,7 +82,7 @@ Traceback (most recent call last):
     ...
 ValueError: setting an array element with a sequence.
 
-# Test 11: Multiplying matrices with non-numeric elements (should raise TypeError)
+# Test 10: Multiplying matrices with non-numeric elements (should raise TypeError)
 >>> m_a = [['a', 2], [3, 4]]
 >>> m_b = [[1, 2], [3, 'b']]
 >>> lazy_matrix_mul(m_a, m_b)
@@ -111,7 +111,7 @@ Traceback (most recent call last):
     ...
 ValueError: Scalar operands are not allowed, use '*' instead
 
-# Test 12: Multiplying incompatible matrices (should raise ValueError)
+# Test 11: Multiplying incompatible matrices (should raise ValueError)
 >>> m_a = [[5, 6], [7, 8]]
 >>> m_b = [[5, 6, 1], [7, 8]]
 >>> lazy_matrix_mul(m_a, m_b)
@@ -119,7 +119,7 @@ Traceback (most recent call last):
     ...
 ValueError: setting an array element with a sequence.
 
-# Test 13: Calling lazy_matrix_mul with insufficient arguments should throw a TypeError
+# Test 12: Calling lazy_matrix_mul with insufficient arguments should throw a TypeError
 >>> lazy_matrix_mul([[1, 2], [3, 4]])
 Traceback (most recent call last):
     ...
