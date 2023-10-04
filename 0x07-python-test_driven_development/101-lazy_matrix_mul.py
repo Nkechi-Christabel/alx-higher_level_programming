@@ -18,9 +18,5 @@ def lazy_matrix_mul(m_a, m_b):
 
     Returns:
         list: The resulting matrix.
-
-    Raises:
-        ValueError: If matrices are empty or incompatible for multiplication.
-        TypeError: If matrices contain non-numeric elements.
     """
     return np.matmul(m_a, m_b)
