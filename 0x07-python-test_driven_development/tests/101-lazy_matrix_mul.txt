@@ -120,7 +120,7 @@ array([[4, 4],
        [8, 8]])
 
 # Test 12: Calling lazy_matrix_mul with insufficient arguments should throw a TypeError
->>> lazy_matrix_mul([[1, 2], [3]])
+>>> lazy_matrix_mul([[1, 2], [3, 4]])
 Traceback (most recent call last):
     ...
 TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
