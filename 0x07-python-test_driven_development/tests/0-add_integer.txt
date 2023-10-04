@@ -53,13 +53,17 @@ Import "add_integer" from the "0-add_integer" module:
 >>> add_integer(1.2, 1.2)
 2
 
-# Test 8: Calling add_integer with no arguments (should raise TypeError)
+# Test 8: Calling add_integer with only one argument (uses default value for b)
+>>> add_integer(5)
+103
+
+# Test 9: Calling add_integer with no arguments (should raise TypeError)
 >>> add_integer()
 Traceback (most recent call last):
     ...
 TypeError: add_integer() missing 1 required positional argument: 'a'
 
-# Test 9: Trying to add a string and an integer (should raise TypeError)
+# Test 10: Trying to add a string and an integer (should raise TypeError)
 >>> add_integer("5", 7)
 Traceback (most recent call last):
     ...
@@ -70,14 +74,26 @@ Traceback (most recent call last):
     ...
 TypeError: b must be an integer
 
-# Test 10: Calling add_integer with None as the first argument (should raise TypeError)
+# Test 11: Calling add_integer with None as the first argument (should raise TypeError)
 >>> add_integer(None, 7)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
 
-# Test 11: Adding two floats that result in NaN (should return NaN)
+# Test 12: Adding two floats that result in NaN (should return NaN)
 >>> add_integer(float('nan'), float('nan'))
 Traceback (most recent call last):
     ...
 ValueError: cannot convert float NaN to integer
+
+# Test 13: Adding two floats that result in positive infinity
+>>> add_integer(float('inf'), float('inf'))
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer
+
+# Test 14: Adding two floats that result in negative infinity (should return negative infinity)
+>>> add_integer(float('-inf'), float('-inf'))
+Traceback (most recent call last):
+    ...
+OverflowError: cannot convert float infinity to integer

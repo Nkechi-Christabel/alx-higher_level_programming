@@ -37,11 +37,11 @@ def matrix_mul(m_a, m_b):
         raise TypeError("m_b must be a list of lists")
     if not all(isinstance(x, (int, float)) for row in m_a for x in row):
         raise TypeError("m_a should contain only integers or floats")
-    if not all(isinstance(x, (int, float)) for row in m_a for x in row):
+    if not all(isinstance(x, (int, float)) for row in m_b for x in row):
         raise TypeError("m_b should contain only integers or floats")
-    if not m_a:
+    if len(m_a) == 0 or all(len(row) == 0 for row in m_a):
         raise ValueError("m_a can't be empty")
-    if not m_b:
+    if len(m_b) == 0 or all(len(row) == 0 for row in m_b):
         raise ValueError("m_b can't be empty")
     if not all(len(row) == len(m_a[0]) for row in m_a):
         raise TypeError("each row of m_a must be of the same size")

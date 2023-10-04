@@ -7,6 +7,7 @@ multiplies two matrices
 """
 import numpy as np
 
+
 def lazy_matrix_mul(m_a, m_b):
     """
     Multiplies two matrices using NumPy.
@@ -22,11 +23,4 @@ def lazy_matrix_mul(m_a, m_b):
         ValueError: If matrices are empty or incompatible for multiplication.
         TypeError: If matrices contain non-numeric elements.
     """
-
-    try:
-        return np.matmul(m_a, m_b)
-    except ValueError:
-        raise ValueError("m_a and m_b can't be multiplied")
-    except TypeError:
-        raise TypeError("m_a should contain only integers or floats or m_b"
-                        " should contain only integers or floats")
+    return np.matmul(m_a, m_b)

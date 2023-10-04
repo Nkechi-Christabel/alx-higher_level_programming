@@ -17,15 +17,29 @@ array([[19, 22],
 >>> lazy_matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-ValueError: m_a and m_b can't be multiplied
+ValueError: shapes (0,) and (2,2) not aligned: 0 (dim 0) != 2 (dim 0)
 
-# Test 3: Multiplying non-rectangle matrices (should raise TypeError)
->>> m_a = [[1, 2], [3, 4, 5]]
->>> m_b = [[1, 2, 3], [4, 5]]
+>>> m_a = [[]]
+>>> m_b = [[5, 6], [7, 8]]
 >>> lazy_matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-ValueError: m_a and m_b can't be multiplied
+ValueError: shapes (1,0) and (2,2) not aligned: 0 (dim 1) != 2 (dim 0)
+
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+ValueError: shapes (2,2) and (1,0) not aligned: 2 (dim 1) != 1 (dim 0)
+
+# Test 3: Multiplying non-rectangle matrices (should raise TypeError)
+>>> m_a = [[5, 6], [7, 8]]
+>>> m_b = [[5, 6, 1], [7, 8]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence.
 
 # Test 4: Multiplying matrices with non-numeric elements (should raise TypeError)
 >>> m_a = [['a', 2], [3, 4]]
@@ -33,15 +47,36 @@ ValueError: m_a and m_b can't be multiplied
 >>> lazy_matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-TypeError: m_a should contain only integers or floats or m_b should contain only integers or floats
+TypeError: invalid data type for einsum
 
-# Test 5: Multiplying incompatible matrices (should raise ValueError)
->>> m_a = [[1, 2, 3], [4, 5, 6]]
->>> m_b = [[1, 2], [3, 4]]
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[5, "6"], [7, 8]]
 >>> lazy_matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
-ValueError: m_a and m_b can't be multiplied
+TypeError: invalid data type for einsum
+
+>>> m_a = "Hello"
+>>> m_b = [[5, 6], [7, 8]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+ValueError: Scalar operands are not allowed, use '*' instead
+
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = "World!"
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+ValueError: Scalar operands are not allowed, use '*' instead
+
+# Test 5: Multiplying incompatible matrices (should raise ValueError)
+>>> m_a = [[5, 6], [7, 8]]
+>>> m_b = [[5, 6, 1], [7, 8]]
+>>> lazy_matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+ValueError: setting an array element with a sequence.
 
 # Test 6: Multiplying identity matrices (should return the same matrix)
 >>> identity_matrix = [[1, 0], [0, 1]]
@@ -83,3 +118,14 @@ array([[1, 2],
 >>> lazy_matrix_mul(m_a, ones_matrix)
 array([[4, 4],
        [8, 8]])
+
+# Test 12: Calling lazy_matrix_mul with insufficient arguments should throw a TypeError
+>>> lazy_matrix_mul([[1, 2], [3]])
+Traceback (most recent call last):
+    ...
+TypeError: lazy_matrix_mul() missing 1 required positional argument: 'm_b'
+
+>>> lazy_matrix_mul()
+Traceback (most recent call last):
+    ...
+TypeError: lazy_matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'

@@ -28,7 +28,6 @@ Test Cases
 
 # Test 4: Printing a square of size 0 (no error, should not raise ValueError)
 >>> print_square(0)
-<BLANKLINE>
 
 # Test 5: Printing a square with a negative size (should raise ValueError)
 >>> print_square(-2)

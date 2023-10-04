@@ -23,21 +23,49 @@ Traceback (most recent call last):
     ...
 ValueError: m_a can't be empty
 
+>>> m_a = [[]]
+>>> m_b = [[5, 6], [7, 8]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+ValueError: m_a can't be empty
+
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+ValueError: m_b can't be empty
+
 # Test 3: Multiplying non-rectangle matrices (should raise TypeError)
 >>> m_a = [[1, 2], [3, 4, 5]]
->>> m_b = [[1, 2, 3], [4, 5]]
+>>> m_b = [[1, 2, 3], [4, 5, 6]]
 >>> matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
 TypeError: each row of m_a must be of the same size
 
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+>>> m_b = [[1, 2], [3, 4, 5]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: each row of m_b must be of the same size
+
 # Test 4: Multiplying matrices with non-numeric elements (should raise TypeError)
 >>> m_a = [['a', 2], [3, 4]]
->>> m_b = [[1, 2], [3, 'b']]
+>>> m_b = [[1, 2], [3, 4]]
 >>> matrix_mul(m_a, m_b)
 Traceback (most recent call last):
     ...
 TypeError: m_a should contain only integers or floats
+
+>>> m_a = [[1, 2], [3, 4]]
+>>> m_b = [[5, "6"], [7, 8]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b should contain only integers or floats
 
 # Test 5: Multiplying incompatible matrices (should raise ValueError)
 >>> m_a = [[1, 2, 3], [4, 5, 6]]
@@ -46,3 +74,43 @@ TypeError: m_a should contain only integers or floats
 Traceback (most recent call last):
     ...
 ValueError: m_a and m_b can't be multiplied
+
+# Test 6: Multiplying non list should raise TypeError
+>>> m_a = "Hello"
+>>> m_b = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list
+
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+>>> m_b = "World!"
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list
+
+>>> m_a = [1, 2, 3, 4]
+>>> m_b = [[1, 2, 3], [4, 5, 6]]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_a must be a list of lists
+
+>>> m_a = [[1, 2, 3], [4, 5, 6]]
+>>> m_b = [1, 2, 3, 4]
+>>> matrix_mul(m_a, m_b)
+Traceback (most recent call last):
+    ...
+TypeError: m_b must be a list of lists
+
+Test 7: Calling matrix_mul with insufficient argument should raise TypeError
+>>> matrix_mul([[1]])
+Traceback (most recent call last):
+    ...
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+
+>>> matrix_mul()
+Traceback (most recent call last):
+    ...
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
