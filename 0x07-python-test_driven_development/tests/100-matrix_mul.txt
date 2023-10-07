@@ -15,7 +15,7 @@ Import `matrix_mul` from the appropriate module:
 >>> matrix_mul(m_a, m_b)
 [[19, 22], [43, 50]]
 
-# Test 2: Multiplying matrices with an empty matrix (should raise ValueError)
+# Test 2: Multiplying matrices with an empty matrix raises a ValueError
 >>> m_a = []
 >>> m_b = [[1, 2], [3, 4]]
 >>> matrix_mul(m_a, m_b)
@@ -37,7 +37,7 @@ Traceback (most recent call last):
     ...
 ValueError: m_b can't be empty
 
-# Test 3: Multiplying non-rectangle matrices (should raise TypeError)
+# Test 3: Multiplying non-rectangle matrices raises a TypeError
 >>> m_a = [[1, 2], [3, 4, 5]]
 >>> m_b = [[1, 2, 3], [4, 5, 6]]
 >>> matrix_mul(m_a, m_b)
@@ -52,7 +52,7 @@ Traceback (most recent call last):
     ...
 TypeError: each row of m_b must be of the same size
 
-# Test 4: Multiplying matrices with non-numeric elements (should raise TypeError)
+# Test 4: Multiplying matrices with non-numeric elements raises a TypeError
 >>> m_a = [['a', 2], [3, 4]]
 >>> m_b = [[1, 2], [3, 4]]
 >>> matrix_mul(m_a, m_b)
@@ -67,7 +67,7 @@ Traceback (most recent call last):
     ...
 TypeError: m_b should contain only integers or floats
 
-# Test 5: Multiplying incompatible matrices (should raise ValueError)
+# Test 5: Multiplying incompatible matrices raises a ValueError
 >>> m_a = [[1, 2, 3], [4, 5, 6]]
 >>> m_b = [[1, 2], [3, 4]]
 >>> matrix_mul(m_a, m_b)
@@ -75,7 +75,7 @@ Traceback (most recent call last):
     ...
 ValueError: m_a and m_b can't be multiplied
 
-# Test 6: Multiplying non list should raise TypeError
+# Test 6: Multiplying non list raises a TypeError
 >>> m_a = "Hello"
 >>> m_b = [[1, 2, 3], [4, 5, 6]]
 >>> matrix_mul(m_a, m_b)
@@ -104,7 +104,7 @@ Traceback (most recent call last):
     ...
 TypeError: m_b must be a list of lists
 
-Test 7: Calling matrix_mul with insufficient argument should raise TypeError
+Test 7: Calling matrix_mul with insufficient argument raises a TypeError
 >>> matrix_mul([[1]])
 Traceback (most recent call last):
     ...

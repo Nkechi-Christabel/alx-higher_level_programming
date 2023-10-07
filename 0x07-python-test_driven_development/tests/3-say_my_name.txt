@@ -17,13 +17,13 @@ My name is John Doe
 >>> say_my_name("Alice")
 My name is Alice 
 
-# Test 3: Printing the full name with non-string first name (should raise TypeError)
+# Test 3: Printing the full name with non-string first name raises TypeError
 >>> say_my_name(123, "Smith")
 Traceback (most recent call last):
     ...
 TypeError: first_name must be a string
 
-# Test 4: Printing the full name with non-string last name (should raise TypeError)
+# Test 4: Printing the full name with non-string last name raises TypeError
 >>> say_my_name("Bob", 456)
 Traceback (most recent call last):
     ...
@@ -33,7 +33,7 @@ TypeError: last_name must be a string
 >>> say_my_name("", "")
 My name is  
 
-# Test 6: Printing the full name with no arguments (should raise TypeError)
+# Test 6: Printing the full name with no arguments raises TypeError
 >>> say_my_name()
 Traceback (most recent call last):
     ...

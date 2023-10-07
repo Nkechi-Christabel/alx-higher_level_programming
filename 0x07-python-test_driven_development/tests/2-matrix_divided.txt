@@ -21,7 +21,7 @@ Import "matrix_divided" from the "2-matrix_divided" module:
 >>> matrix_divided(matrix, div)
 [[0.0, 0.0], [0.0, 0.0]]
 
-# Test 3: Dividing a 2x2 matrix by 0 (should raise ZeroDivisionError)
+# Test 3: Dividing a 2x2 matrix by 0 raises ZeroDivisionError
 >>> matrix = [[1, 2], [3, 4]]
 >>> div = 0
 >>> matrix_divided(matrix, div)
@@ -29,7 +29,7 @@ Traceback (most recent call last):
     ...
 ZeroDivisionError: division by zero
 
-# Test 4: Dividing a matrix containing non-numeric elements (should raise TypeError)
+# Test 4: Dividing a matrix containing non-numeric elements raises TypeError
 >>> matrix = [[1, 2, 'a'], [4, 5, 6], [7, 8, 9]]
 >>> div = 2
 >>> matrix_divided(matrix, div)
@@ -37,7 +37,7 @@ Traceback (most recent call last):
     ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
 
-# Test 5: Dividing a matrix with rows of different sizes (should raise TypeError)
+# Test 5: Dividing a matrix with rows of different sizes raises TypeError
 >>> matrix = [[1, 2, 3], [4, 5], [7, 8, 9]]
 >>> div = 2
 >>> matrix_divided(matrix, div)
@@ -45,7 +45,7 @@ Traceback (most recent call last):
     ...
 TypeError: Each row of the matrix must have the same size
 
-# Test 6: Dividing a matrix with a string as the divisor (should raise TypeError)
+# Test 6: Dividing a matrix with a string as the divisor raises TypeError
 >>> matrix = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 >>> div = '2'
 >>> matrix_divided(matrix, div)
@@ -53,14 +53,14 @@ Traceback (most recent call last):
     ...
 TypeError: div must be a number
 
-# Test 7: Missing one argument (should raise TypeError)
+# Test 7: Missing one argument raises TypeError
 >>> matrix = [[1, 2], [3, 4]]
 >>> matrix_divided(matrix)
 Traceback (most recent call last):
     ...
 TypeError: matrix_divided() missing 1 required positional argument: 'div'
 
-# Test 8: Missing two arguments (should raise TypeError)
+# Test 8: Missing two arguments raises TypeError
 >>> matrix_divided()
 Traceback (most recent call last):
     ...

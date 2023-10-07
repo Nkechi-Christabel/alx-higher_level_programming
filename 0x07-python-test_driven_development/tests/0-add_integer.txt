@@ -57,13 +57,13 @@ Import "add_integer" from the "0-add_integer" module:
 >>> add_integer(5)
 103
 
-# Test 9: Calling add_integer with no arguments (should raise TypeError)
+# Test 9: Calling add_integer with no arguments raises TypeError
 >>> add_integer()
 Traceback (most recent call last):
     ...
 TypeError: add_integer() missing 1 required positional argument: 'a'
 
-# Test 10: Trying to add a string and an integer (should raise TypeError)
+# Test 10: Trying to add a string and an integer raises TypeError
 >>> add_integer("5", 7)
 Traceback (most recent call last):
     ...
@@ -74,13 +74,13 @@ Traceback (most recent call last):
     ...
 TypeError: b must be an integer
 
-# Test 11: Calling add_integer with None as the first argument (should raise TypeError)
+# Test 11: Calling add_integer with None as the first argument raises TypeError
 >>> add_integer(None, 7)
 Traceback (most recent call last):
     ...
 TypeError: a must be an integer
 
-# Test 12: Adding two floats that result in NaN (should return NaN)
+# Test 12: Adding two floats that result in NaN raises ValueError
 >>> add_integer(float('nan'), float('nan'))
 Traceback (most recent call last):
     ...
