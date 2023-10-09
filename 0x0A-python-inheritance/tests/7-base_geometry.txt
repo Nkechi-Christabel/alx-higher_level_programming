@@ -33,3 +33,17 @@ TypeError: test_value must be an integer
 Traceback (most recent call last):
     ...
 ValueError: test_value must be greater than 0
+
+# Test 5: Validating a float using 'integer_validator' should raise a TypeError
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("test_value", 3.14)
+TypeError('test_value must be an integer')
+
+# Test 6: Validating a negative integer using 'integer_validator' should raise a ValueError
+>>> geometry = BaseGeometry()
+>>> geometry.integer_validator("test_value", -42)
+ValueError('test_value must be greater than 0')
+
+# Test 7: Validating a large positive integer using 'integer_validator'
+>>> geometry = BaseGeometry()
+>>> result = geometry.integer_validator("test_value", 1000000)
