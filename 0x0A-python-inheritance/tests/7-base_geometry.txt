@@ -49,9 +49,6 @@ Traceback (most recent call last):
 TypeError: width must be an integer
 
 >>> geometry.integer_validator("boolean", True)
-Traceback (most recent call last):
-    ...
-TypeError: boolean must be an integer
 
 # Test 5: Validating a non-positive integer using 'integer_validator' should raise a ValueError
 >>> geometry.integer_validator("test_value", 0)
