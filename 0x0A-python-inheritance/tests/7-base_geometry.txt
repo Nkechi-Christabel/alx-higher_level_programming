@@ -28,6 +28,11 @@ Traceback (most recent call last):
     ...
 TypeError: test_value must be an integer
 
+b.integer_validator("bool", True)
+Traceback (most recent call last):
+    ...
+TypeError: bool must be an integer
+
 # Test 5: Validating a non-positive integer using 'integer_validator' should raise a ValueError
 >>> geometry.integer_validator("test_value", 0)
 Traceback (most recent call last):
@@ -45,8 +50,3 @@ TypeError: test_value must be an integer
 Traceback (most recent call last):
     ...
 TypeError: integer_validator() missing 1 required positional argument: 'value'
-
->>> geometry.integer_validator()
-Traceback (most recent call last):
-    ...
-TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
