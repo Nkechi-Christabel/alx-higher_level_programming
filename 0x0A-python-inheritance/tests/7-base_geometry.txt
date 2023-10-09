@@ -43,6 +43,11 @@ Traceback (most recent call last):
     ...
 TypeError: area must be an integer
 
+>>> geometry.integer_validator("width", None)
+Traceback (most recent call last):
+    ...
+TypeError: age must be an integer
+
 # Test 5: Validating a non-positive integer using 'integer_validator' should raise a ValueError
 >>> geometry.integer_validator("test_value", 0)
 Traceback (most recent call last):
