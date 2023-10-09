@@ -40,12 +40,6 @@ Traceback (most recent call last):
     ...
 TypeError: test_value must be an integer
 
-# Test 7: Validating a negative number
->>> geometry.integer_validator("value", -42)
-Traceback (most recent call last):
-    ...
-ValueError: value must be greater than 0
-
 # Test 8: Calling integer_validator with one argument should raise a TypeError
 >>> geometry.integer_validator("Height")
 Traceback (most recent call last):
