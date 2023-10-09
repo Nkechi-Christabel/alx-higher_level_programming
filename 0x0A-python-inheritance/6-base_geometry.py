@@ -8,9 +8,10 @@ It is based on 1-square.py 5-base_geometry.py
 
 
 class BaseGeometry:
+    """Defned class BaseGeometry"""
     def area(self):
         """
-        Calculate the area of the geometry.
+        Defined method, area.
 
         Raises:
             Exception: This method is not implemented in the base class.
