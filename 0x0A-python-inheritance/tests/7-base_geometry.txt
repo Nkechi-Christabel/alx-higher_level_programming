@@ -8,39 +8,40 @@ Test cases
 
 Import "BaseGeometry" from the "7-base_geometry" module:
 >>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
-
-# Test 1: Calling the 'area' method directly should raise an Exception
 >>> geometry = BaseGeometry()
+
+# Test 1: Validating a positive integer using 'integer_validator'
+>>> geometry.integer_validator("test_value", 42)
+
+# Test 2: Validating a large positive integer using 'integer_validator'
+>>> geometry.integer_validator("test_value", 1000000)
+
+# Test 3: Calling the 'area' method directly should raise an Exception
 >>> geometry.area()
 Traceback (most recent call last):
     ...
 Exception: area() is not implemented
 
-# Test 2: Validating a positive integer using 'integer_validator'
->>> geometry = BaseGeometry()
->>> geometry.integer_validator("test_value", 42)
-
-# Test 3: Validating a non-integer using 'integer_validator' should raise a TypeError
->>> geometry = BaseGeometry()
+# Test 4: Validating a non-integer using 'integer_validator' should raise a TypeError
 >>> geometry.integer_validator("test_value", "invalid")
 Traceback (most recent call last):
     ...
 TypeError: test_value must be an integer
 
-# Test 4: Validating a non-positive integer using 'integer_validator' should raise a ValueError
->>> geometry = BaseGeometry()
+# Test 5: Validating a non-positive integer using 'integer_validator' should raise a ValueError
 >>> geometry.integer_validator("test_value", 0)
 Traceback (most recent call last):
     ...
 ValueError: test_value must be greater than 0
 
-# Test 5: Validating a float using 'integer_validator' should raise a TypeError
->>> geometry = BaseGeometry()
+# Test 6: Validating a float using 'integer_validator' should raise a TypeError
 >>> geometry.integer_validator("test_value", 3.14)
 Traceback (most recent call last):
     ...
 TypeError: test_value must be an integer
 
-# Test 7: Validating a large positive integer using 'integer_validator'
->>> geometry = BaseGeometry()
->>> geometry.integer_validator("test_value", 1000000)
+# Test 7: Validating a negative number
+>>> geometry.integer_validator("value", -42)
+Traceback (most recent call last):
+    ...
+ValueError: value must be greater than 0

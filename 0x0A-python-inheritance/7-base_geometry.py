@@ -3,7 +3,7 @@
 """
 This module defines a class BaseGeometry.
 
-It is based on 1-square.py 6-base_geometry.py
+It is based on 6-base_geometry.py
 """
 
 
