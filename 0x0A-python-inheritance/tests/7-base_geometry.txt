@@ -35,7 +35,7 @@ Traceback (most recent call last):
     ...
 TypeError: test_value must be an integer
 
->>> geometry.integer_validator("Height", (4,))
+>>> geometry.integer_validator("Height", (1, 2))
 Traceback (most recent call last):
    ...
 TypeError: Height must be an integer
@@ -45,7 +45,7 @@ Traceback (most recent call last):
     ...
 TypeError: Height must be an integer
 
->>> geometry.integer_validator("area", {1, 2})
+>>> geometry.integer_validator("area", {4, 5})
 Traceback (most recent call last):  
     ...
 TypeError: area must be an integer
