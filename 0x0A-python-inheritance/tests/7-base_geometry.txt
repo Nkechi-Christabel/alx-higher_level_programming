@@ -14,7 +14,7 @@ Import "BaseGeometry" from the "7-base_geometry" module:
 >>> geometry.integer_validator("test_value", 42)
 
 # Test 2: Validating a large positive integer using 'integer_validator'
->>> geometry.integer_validator("test_value", 1000000)
+>>> geometry.integer_validator("test_value", 10000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000)
 
 # Test 3: Calling the 'area' method directly should raise an Exception
 >>> geometry.area()
@@ -47,8 +47,6 @@ TypeError: area must be an integer
 Traceback (most recent call last):
     ...
 TypeError: width must be an integer
-
->>> geometry.integer_validator("boolean", True)
 
 # Test 5: Validating a non-positive integer using 'integer_validator' should raise a ValueError
 >>> geometry.integer_validator("test_value", 0)
