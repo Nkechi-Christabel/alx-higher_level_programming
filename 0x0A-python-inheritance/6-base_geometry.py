@@ -11,7 +11,7 @@ class BaseGeometry:
     """Defned class BaseGeometry"""
     def area(self):
         """
-        Defined method, area.
+        Defined method, area. Not implemented
 
         Raises:
             Exception: This method is not implemented in the base class.
