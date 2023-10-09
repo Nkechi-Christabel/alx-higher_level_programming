@@ -13,7 +13,7 @@ Import "BaseGeometry" from the "7-base_geometry" module:
 # Test 1: Validating a positive integer using 'integer_validator'
 >>> geometry.integer_validator("test_value", 42)
 
->>> bg.integer_validator("width", 90)
+>>> geometry.integer_validator("width", 90)
 
 # Test 2: Validating a large positive integer using 'integer_validator'
 >>> geometry.integer_validator("test_value", 100000000)
