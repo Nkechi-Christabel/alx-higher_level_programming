@@ -50,16 +50,16 @@ Traceback (most recent call last):
     ...
 TypeError: width must be an integer
 
->>> geometry.integer_validator("area", [[1, 2]])
-Traceback (most recent call last):
-    ...
-TypeError: area must be an integer
-
 # Test 5: Validating a non-positive integer using 'integer_validator' should raise a ValueError
 >>> geometry.integer_validator("test_value", 0)
 Traceback (most recent call last):
     ...
 ValueError: test_value must be greater than 0
+
+>>> geometry.integer_validator("len", -4)
+Traceback (most recent call last):
+    ...
+ValueError: len must be greater than 0
 
 # Test 6: Validating a float using 'integer_validator' should raise a TypeError
 >>> geometry.integer_validator("test_value", 3.14)
