@@ -30,6 +30,11 @@ Traceback (most recent call last):
     ...
 TypeError: test_value must be an integer
 
+>>> geometry.integer_validator("bytearrays", bytearray(b"bytes"))
+Traceback (most recent call last):
+    ...
+TypeError: bytearrays must be an integer
+
 >>> geometry.integer_validator("Height", (1, 2))
 Traceback (most recent call last):
    ...
