@@ -28,10 +28,10 @@ Traceback (most recent call last):
     ...
 TypeError: test_value must be an integer
 
-b.integer_validator("bool", True)
+>>> geometry.integer_validator("NaN", float('nan'))
 Traceback (most recent call last):
     ...
-TypeError: bool must be an integer
+TypeError: NaN must be an integer
 
 # Test 5: Validating a non-positive integer using 'integer_validator' should raise a ValueError
 >>> geometry.integer_validator("test_value", 0)
