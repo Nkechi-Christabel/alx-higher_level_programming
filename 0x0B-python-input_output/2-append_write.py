@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-This module(2-append__file.py) contains a function write_file that
+This module(2-append__file.py) contains a function write_file(), that
 appends a string at the end of a text file (UTF8) and returns the
 number of characters written
 """

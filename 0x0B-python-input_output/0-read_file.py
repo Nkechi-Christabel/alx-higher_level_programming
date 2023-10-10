@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 
 """
-This module(0-read_file.py) contains a function read_file that
+This module(0-read_file.py) contains a function read_file(), that
 reads a text file(UTF8) and prints it to stdout.
 """
 

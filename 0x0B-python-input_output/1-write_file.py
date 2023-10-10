@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 
 """
-This module(1-write_file.py) contains a function write_file that
- writes a string to a text file (UTF8) and returns the number of
- characters written
+This module(1-write_file.py) contains a function write_file(), that
+writes a string to a text file (UTF8) and returns the number of
+characters written
 """
 
 
