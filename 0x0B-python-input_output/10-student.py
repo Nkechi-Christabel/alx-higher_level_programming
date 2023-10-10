@@ -37,11 +37,7 @@ class Student:
             Student.
         """
         if attrs is None:
-            return {
-                "first_name": self.first_name,
-                "last_name": self.last_name,
-                "age": self.age
-            }
+            return self.__dict__
         else:
             return {attr: getattr(self, attr) for attr in attrs if hasattr
                     (self, attr)}
