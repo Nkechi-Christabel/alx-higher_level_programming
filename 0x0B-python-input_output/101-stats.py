@@ -1,38 +1,17 @@
 #!/usr/bin/python3
-
-"""
-Module: log_parser
-
-This module defines a simple log file parser that reads lines
-from standard input, accumulates statistics about the file size
-and HTTP status codes, and prints the statistics every 10 lines
-or upon receiving a KeyboardInterrupt.
-
-Usage:
-    $ cat access.log | python3 log_parser.py
-
+"""Reads from standard input and computes metrics.
+After every ten lines or the input of a keyboard interruption (CTRL + C),
+prints the following statistics:
+    - Total file size up to that point.
+    - Count of read status codes up to that point.
 """
 
 
 def print_stats(size, status_codes):
-    """
-    Print file size and HTTP status code statistics.
-
+    """Print accumulated metrics.
     Args:
-        size (int): The total file size accumulated.
-        status_codes (dict): A dictionary containing HTTP status code counts.
-
-    Prints:
-        File size: <size>
-        HTTP Status Codes in sorted order, along with their counts.
-
-    Example:
-        File size: 123456
-        200: 5
-        301: 2
-        404: 3
-        ...
-
+        size (int): The accumulated read file size.
+        status_codes (dict): The accumulated count of status codes.
     """
     print("File size: {}".format(size))
     for key in sorted(status_codes):
