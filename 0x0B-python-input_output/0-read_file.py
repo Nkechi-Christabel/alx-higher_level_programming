@@ -11,8 +11,8 @@ def read_file(filename=""):
     Reads and prints the content of a text file.
 
     Args:
-        filename (str): The name of the text file to be read. If not provided,
-                        an empty string is assumed.
+        filename (str): The name of the text file to be read. If not
+                        provided, an empty string is assumed.
     """
     with open(filename, encoding="utf-8") as f:
-        print(f.read() end="")
+        print(f.read(), end="")
