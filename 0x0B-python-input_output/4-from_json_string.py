@@ -17,4 +17,4 @@ def from_json_string(my_str):
     Returns:
         Any: A Python data structure (object) represented by the JSON string.
     """
-    return json.loads(my_string)
+    return json.loads(my_str)
