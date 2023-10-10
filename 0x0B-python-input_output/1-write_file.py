@@ -9,7 +9,8 @@ This module(1-write_file.py) contains a function write_file that
 
 def write_file(filename="", text=""):
     """
-    Writes the given text to a file and returns the number of characters written.
+    Writes the given text to a file and returns the number of characters
+    written.
 
     Args:
         filename (str): The name of the text file to write to. If not provided,
