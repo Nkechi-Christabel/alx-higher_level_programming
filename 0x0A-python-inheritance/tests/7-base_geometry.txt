@@ -30,6 +30,11 @@ Traceback (most recent call last):
     ...
 TypeError: test_value must be an integer
 
+>>> geometry.integer_validator("width", True)
+Traceback (most recent call last):
+    ...
+TypeError: width must be an integer
+
 >>> geometry.integer_validator("Height", (1, 2))
 Traceback (most recent call last):
    ...
