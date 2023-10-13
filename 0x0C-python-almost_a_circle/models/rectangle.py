@@ -27,6 +27,10 @@ class Rectangle(Base):
         display(self):
             Print the Rectangle instance using '#' characters to stdout, taking
             x and y into account.
+
+        update(self, *args):
+            Assign arguments to the attributes in the following order: id,
+            width, height, x, y.
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         """
@@ -38,13 +42,7 @@ class Rectangle(Base):
             x (int, optional): The x-coordinate of the rectangle's position.
             y (int, optional): The y-coordinate of the rectangle's position.
             id (int, optional): An identifier for the instance.
-
-        Raises:
-            TypeError: If width, height, x, or y is not an integer.
-            ValueError: If width or height is less than or equal to 0, or if x
-            or y is less than 0.
         """
-        super().__init__(id)
         self.width = width
         self.height = height
         self.x = x
@@ -191,3 +189,39 @@ class Rectangle(Base):
         """
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y} - "
                 f"{self.__width}/{self.__height}")
+
+    def update(self, *args, **kwargs):
+        """
+        Assign arguments to the attributes in the following order: id, width,
+        height, x, y. If **kwargs is provided, assign key/value pairs to
+        attributes.
+
+        Args:
+            *args: The arguments to assign to the attributes.
+            **kwargs: Keyword arguments to assign key/value pairs to atrribu
+            tes.
+        """
+        if args:
+            if len(args) >= 1:
+                self.id = args[0]
+            if len(args) >= 2:
+                self.width = args[1]
+            if len(args) >= 3:
+                self.height = args[2]
+            if len(args) >= 4:
+                self.x = args[3]
+            if len(args) >= 5:
+                self.y = args[4]
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        Return a dictionary representation of the Rectangle.
+
+        Returns:
+            dict: A dictionary containing the attributes of the Rectangle.
+        """
+        keys = ['x', 'y', 'id', 'height', 'width']
+        return {k: getattr(self, k) for k in keys}
