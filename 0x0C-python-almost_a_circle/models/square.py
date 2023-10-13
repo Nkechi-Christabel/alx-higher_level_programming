@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This module (rectangle.py) defines the Square class,
+This module (square.py) defines the Square class,
 that inherits from Rectangle.
 """
 
@@ -96,11 +96,6 @@ class Square(Rectangle):
 
         Notes:
             If *args is provided and not empty, **kwargs will be skipped.
-
-        Examples:
-            square.update(1, 10)  # Update id and size
-            square.update(size=5, x=2)  # Update size and x using keyword
-            arguments.
         """
         if args:
             if len(args) >= 1:
