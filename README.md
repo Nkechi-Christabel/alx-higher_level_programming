@@ -33,7 +33,7 @@ Namespaces are one honking great idea -- let's do more of those!
 
 <h2>About</h2>
 
-- This repository consists of all the projects for the Higher Learning programming(Python) segment of
+- This repository consists of all the projects for the Higher level Learning programming(Python) segment of
 [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course in partnership with
 [Holberton School](https://www.holbertonschool.com/) by [Ahmed-Sakr](https://twitter.com/AhmedSkar2).
 
