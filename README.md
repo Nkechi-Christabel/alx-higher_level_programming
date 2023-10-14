@@ -36,7 +36,8 @@ Namespaces are one honking great idea -- let's do more of those!
 - This repository consists of all the projects for the Higher Learning programming(Python) segment of
 [ALX Africa](https://www.alxafrica.com/) Full stack Software Engineering course in partnership with
 [Holberton School](https://www.holbertonschool.com/) by [Ahmed-Sakr](https://twitter.com/AhmedSkar2).
-## Projects
+
+<h2>Projects</h2>
 
 * [0x00. Python - Hello, World](./0x00-python-hello_world)
 * [0x01. Python - if/else, loops, functions](./0x01-python-if_else_loops_functions)
