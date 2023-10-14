@@ -97,15 +97,10 @@ class Square(Rectangle):
         Notes:
             If *args is provided and not empty, **kwargs will be skipped.
         """
+        attributes = ["id", "size", "x", "y"]
         if args:
-            if len(args) >= 1:
-                self.id = args[0]
-            if len(args) >= 2:
-                self.size = args[1]
-            if len(args) >= 3:
-                self.x = args[2]
-            if len(args) >= 4:
-                self.y = args[3]
+            for attr, value in zip(attributes, args):
+                setattr(self, attr, value)
         else:
             for key, value in kwargs.items():
                 setattr(self, key, value)
