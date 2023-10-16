@@ -80,7 +80,7 @@ class Base:
         Notes:
             If json_string is None or empty, an empty list is returned.
         """
-        return json.loads(json_string) if json_string else '[]'
+        return json.loads(json_string) if json_string else []
 
     @classmethod
     def create(cls, **dictionary):
