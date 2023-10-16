@@ -173,10 +173,11 @@ class Base:
 
         return instances
 
-     @staticmethod
+    @staticmethod
     def draw(list_rectangles, list_squares):
         """
-        Open a window and draw Rectangles and Squares using the Turtle graphics module.
+        Open a window and draw Rectangles and Squares using the Turtle
+        graphics module.
 
         Args:
             list_rectangles (list): A list of Rectangle instances to be drawn.
@@ -185,7 +186,7 @@ class Base:
         # Create a Turtle screen
         screen = turtle.Screen()
         screen.title("Shapes Drawing")
-        
+
         # Create a Turtle object for drawing
         pen = turtle.Turtle()
 
