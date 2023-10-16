@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Test different behaviors of the Base class
+Test different behaviors of the Square class
 """
 
 import unittest
@@ -8,7 +8,7 @@ from models.square import Square
 
 class TestSquareMethods(unittest.TestCase):
     """
-    A class to test the Base Class
+    A class to test the Square Class
     """
     def test_init(self):
         # Test initialization with valid arguments
