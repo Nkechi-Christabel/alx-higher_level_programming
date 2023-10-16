@@ -100,9 +100,13 @@ class Square(Rectangle):
         attributes = ["id", "size", "x", "y"]
         if args:
             for attr, value in zip(attributes, args):
+                if not isinstance(value, int):
+                    raise TypeError(f"{attr} must be an integer")
                 setattr(self, attr, value)
         else:
             for key, value in kwargs.items():
+                if not isinstance(value, int):
+                    raise TypeError(f"{key} must be an integer")
                 setattr(self, key, value)
 
     def to_dictionary(self):
