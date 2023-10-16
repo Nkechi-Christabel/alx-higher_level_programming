@@ -3,6 +3,7 @@
 
 import json
 import csv
+import turtle
 
 
 class Base:
@@ -171,3 +172,46 @@ class Base:
             pass
 
         return instances
+
+     @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+        Open a window and draw Rectangles and Squares using the Turtle graphics module.
+
+        Args:
+            list_rectangles (list): A list of Rectangle instances to be drawn.
+            list_squares (list): A list of Square instances to be drawn.
+        """
+        # Create a Turtle screen
+        screen = turtle.Screen()
+        screen.title("Shapes Drawing")
+        
+        # Create a Turtle object for drawing
+        pen = turtle.Turtle()
+
+        # Draw Rectangles
+        pen.color("blue")  # Set color for rectangles
+        for rect in list_rectangles:
+            pen.penup()
+            pen.goto(rect.x, rect.y)
+            pen.pendown()
+            for _ in range(2):
+                pen.forward(rect.width)
+                pen.left(90)
+                pen.forward(rect.height)
+                pen.left(90)
+            pen.penup()
+
+        # Draw Squares
+        pen.color("red")  # Set color for squares
+        for square in list_squares:
+            pen.penup()
+            pen.goto(square.x, square.y)
+            pen.pendown()
+            for _ in range(4):
+                pen.forward(square.size)
+                pen.left(90)
+            pen.penup()
+
+        # Close the window when clicked
+        screen.exitonclick()
