@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 import unittest
 from models.base import Base
 from models.rectangle import Rectangle
@@ -93,11 +95,13 @@ class TestBaseMethods(unittest.TestCase):
         loaded_empty_list = Base.load_from_file_csv()
         self.assertEqual(loaded_empty_list, [])
 
-    @patch('builtins.input', side_effect=[''])
-    def test_draw(self, mock_input):
-        # Test that the draw method opens a window
-        with self.assertRaises(StopIteration):
-            Base.draw([], [])
+    @patch('turtle.Screen', autospec=True)
+    @patch('turtle.Turtle', autospec=True)
+    def test_draw(self, mock_turtle, mock_screen):
+        # Test the draw method
+        Base.draw([], [])
+        mock_screen.assert_called_with()
+        mock_turtle.assert_called_with()
+
 if __name__ == '__main__':
     unittest.main()
-
