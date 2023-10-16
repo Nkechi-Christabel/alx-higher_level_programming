@@ -1,5 +1,7 @@
 import unittest
 from base import Base, Rectangle, Square
+from models.square import Square
+from unittest.mock import patch
 
 class TestBaseMethods(unittest.TestCase):
     def test_to_json_string(self):
@@ -90,6 +92,11 @@ class TestBaseMethods(unittest.TestCase):
         loaded_empty_list = Base.load_from_file_csv()
         self.assertEqual(loaded_empty_list, [])
 
+    @patch('builtins.input', side_effect=[''])
+    def test_draw(self, mock_input):
+        # Test that the draw method opens a window
+        with self.assertRaises(StopIteration):
+            Base.draw([], [])
 if __name__ == '__main__':
     unittest.main()
 
