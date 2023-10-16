@@ -1,10 +1,15 @@
 #!/usr/bin/python3
-""" """
+"""
+Test different behaviors of the Base class
+"""
 
 import unittest
 from models.square import Square
 
 class TestSquareMethods(unittest.TestCase):
+    """
+    A class to test the Base Class
+    """
     def test_init(self):
         # Test initialization with valid arguments
         square = Square(4, 1, 2, 10)
