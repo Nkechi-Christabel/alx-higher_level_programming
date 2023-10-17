@@ -93,7 +93,7 @@ class TestBase(unittest.TestCase):
 
     def test_to_json_string(self):
         """
-        Test a normal to_json_string functionality
+        Test a correct to_json_string functionality
         """
         rect_data = {'id': 31, 'x': 14, 'y': 10, 'width': 5, 'height': 5}
         json_data = Base.to_json_string([rect_data])
@@ -105,7 +105,6 @@ class TestBase(unittest.TestCase):
             '{["id": 31, "x": 14, "y": 10, "width": 5, "height": 5]}'
         )
 
-    def test_to_json_string(self):
         """
         Test a wrong functionality of to_json_string method
         """
@@ -154,8 +153,24 @@ class TestBase(unittest.TestCase):
         expected_json = (
              '[{"x": 0, "y": 0, "id": 4, "height": 2, "width": 1}, '
               '{"x": 0, "y": 0, "id": 5, "height": 4, "width": 3}]')
-
         self.assertEqual(file_contents, expected_json)
+   
+	# Test saving to file for Square
+        square1 = Square(4, 1, 2, 10)
+        square2 = Square(6, 2, 3, 20)
+        Square.save_to_file([square1, square2])
+        # Check the contents of the file
+        with open('Square.json', 'r') as f:
+            file_contents = f.read()
+        expected_json = '[{"id": 10, "x": 1, "size": 4, "y": 2}, {"id": 20, "x": 2, "size": 6, "y": 3}]'
+        self.assertEqual(file_contents, expected_json)
+
+	# Test saving an empty list to file
+        Square.save_to_file([])
+        # Check the contents of the file
+        with open('Square.json', 'r') as f:
+            file_contents = f.read()
+        self.assertEqual(file_contents, '[]')
 
     def test_create(self):
         """
@@ -198,6 +213,28 @@ class TestBase(unittest.TestCase):
         self.assertEqual(rect.height, 2)
         self.assertEqual(rect.x, 3)
         self.assertEqual(rect.y, 4)
+
+	# Test creation of Square with 'id' attribute
+        square = Square.create(**{'id': 89})
+        self.assertEqual(square.id, 89)
+
+	# Test creation of Square with 'id' and 'size' attributes
+        square = Square.create(**{'id': 89, 'size': 4})
+        self.assertEqual(square.id, 89)
+        self.assertEqual(square.size, 4)
+
+	 # Test creation of Square with 'id,' 'size,' and 'x' attributes
+        square = Square.create(**{'id': 89, 'size': 4, 'x': 1})
+        self.assertEqual(square.id, 89)
+        self.assertEqual(square.size, 4)
+        self.assertEqual(square.x, 1)
+
+	# Test creation of Square with 'id,' 'size,' 'x,' and 'y' attributes
+        square = Square.create(**{'id': 89, 'size': 4, 'x': 1, 'y': 2})
+        self.assertEqual(square.id, 89)
+        self.assertEqual(square.size, 4)
+        self.assertEqual(square.x, 1)
+        self.assertEqual(square.y, 2)
 
     def test_load_from_file(self):
         """
