@@ -138,12 +138,19 @@ class Base:
             writer = csv.writer(csvfile)
 
             if cls.__name__ == "Rectangle":
-                for obj in list_objs:
-                    writer.writerow([obj.id, obj.width, obj.height, obj.x,
-                                    obj.y])
+                if list_objs is not None:
+                    for obj in list_objs:
+                        writer.writerow([obj.id, obj.width, obj.height, obj.x,
+                                        obj.y])
+                else:
+                    writer.writerow([])
+
             elif cls.__name__ == "Square":
-                for obj in list_objs:
-                    writer.writerow([obj.id, obj.size, obj.x, obj.y])
+                if list_objs is not None:
+                    for obj in list_objs:
+                        writer.writerow([obj.id, obj.size, obj.x, obj.y])
+                else:
+                    writer.writerow([])
 
     @classmethod
     def load_from_file_csv(cls):
