@@ -26,7 +26,7 @@ class TestBase(unittest.TestCase):
             "Found code style errors (and warnings)."
         )
 
-    def test_id_as_positive(self):
+    def test_id(self):
         """
         Test for positive Base Class id
         """
@@ -35,7 +35,6 @@ class TestBase(unittest.TestCase):
         base_instance = Base(30)
         self.assertEqual(base_instance.id, 30)
 
-    def test_id_as_negative(self):
         """
         Test for negative Base Class id
         """
@@ -44,7 +43,6 @@ class TestBase(unittest.TestCase):
         base_instance = Base(-10)
         self.assertEqual(base_instance.id, -10)
 
-    def test_id_as_none(self):
         """
         Test for None Base Class id
         """
@@ -56,7 +54,8 @@ class TestBase(unittest.TestCase):
         base_instance = Base(None)
         self.assertEqual(base_instance.id, 2)
 
-    def test_string_id(self):
+        """Test id with string argument"""
+
         base_instance = Base("Ping Pong")
         self.assertEqual(base_instance.id, "Ping Pong")
         base_instance = Base("Hola soy Goku")
@@ -223,7 +222,7 @@ class TestBase(unittest.TestCase):
         self.assertEqual(square.id, 89)
         self.assertEqual(square.size, 4)
 
-	 # Test creation of Square with 'id,' 'size,' and 'x' attributes
+	# Test creation of Square with 'id,' 'size,' and 'x' attributes
         square = Square.create(**{'id': 89, 'size': 4, 'x': 1})
         self.assertEqual(square.id, 89)
         self.assertEqual(square.size, 4)
