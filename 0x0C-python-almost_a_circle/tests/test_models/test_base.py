@@ -26,6 +26,14 @@ class TestBase(unittest.TestCase):
             "Found code style errors (and warnings)."
         )
 
+    def test_instance(self):
+        """
+        Test Base Class instance
+        """
+        base_instance = Base()
+        self.assertEqual(type(base_instance), Base)
+        self.assertTrue(isinstance(base_instance, Base))
+
     def test_id(self):
         """
         Test for positive Base Class id
@@ -55,7 +63,6 @@ class TestBase(unittest.TestCase):
         self.assertEqual(base_instance.id, 2)
 
         """Test id with string argument"""
-
         base_instance = Base("Ping Pong")
         self.assertEqual(base_instance.id, "Ping Pong")
         base_instance = Base("Hola soy Goku")
@@ -66,11 +73,10 @@ class TestBase(unittest.TestCase):
         Test to_json_string method
         """
         rect_instance = Rectangle(10, 17, 2, 8, 70)
-        rect_data = re1.to_dictionary()
+        rect_data = rect_instance.to_dictionary()
         json_data = Base.to_json_string([rect_data])
         self.assertEqual(type(json_data), str)
 
-    def test_empty_to_json_string(self):
         """
         Test for a empty data on to_json_string method
         """
@@ -82,15 +88,6 @@ class TestBase(unittest.TestCase):
         json_data = Base.to_json_string(empty_data)
         self.assertEqual(json_data, "[]")
 
-    def test_instance(self):
-        """
-        Test Base Class instance
-        """
-        base_instance = Base()
-        self.assertEqual(type(base_instance), Base)
-        self.assertTrue(isinstance(base_instance, Base))
-
-    def test_to_json_string(self):
         """
         Test a correct to_json_string functionality
         """
