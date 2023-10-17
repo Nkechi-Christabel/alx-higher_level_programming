@@ -48,6 +48,9 @@ class TestBase(unittest.TestCase):
         """
         Test for None Base Class id
         """
+	# Reset the counter to 0
+        Base._Base__nb_objects = 0
+
         base_instance = Base()
         self.assertEqual(base_instance.id, 1)
         base_instance = Base(None)
@@ -102,7 +105,7 @@ class TestBase(unittest.TestCase):
             '{["id": 31, "x": 14, "y": 10, "width": 5, "height": 5]}'
         )
 
-    def test_wrong_to_json_string(self):
+    def test_to_json_string(self):
         """
         Test a wrong functionality of to_json_string method
         """
@@ -124,17 +127,77 @@ class TestBase(unittest.TestCase):
 
         self.assertEqual(warn, str(msg.exception))
 
-    def test_wrong_save_to_file(self):
+    def test_save_to_file(self):
         """
         Test save_to_file method
         """
         with self.assertRaises(AttributeError) as msg:
             Base.save_to_file([Base(1), Base(2)])
 
-        #self.assertEqual(
-        #     "'Base' object has no attribute 'to_dictionary'",
-        #     str(msg.exception)
-        #)
+        # Test saving with None as input
+        self.assertIsNone(Rectangle.save_to_file(None))
+
+        # Test saving an empty list of Rectangle instances
+        Rectangle.save_to_file([])
+        with open("Rectangle.json", "r") as file:
+            saved_content = file.read()
+            self.assertEqual(saved_content, "[]")
+
+	# Test saving a list containing Rectangle instances
+        rect1 = Rectangle(1, 2)
+        rect2 = Rectangle(3, 4)
+        Rectangle.save_to_file([rect1, rect2])
+
+        # Check the contents of the file
+        with open('Rectangle.json', 'r') as f:
+            file_contents = f.read()
+        expected_json = (
+             '[{"x": 0, "y": 0, "id": 4, "height": 2, "width": 1}, '
+              '{"x": 0, "y": 0, "id": 5, "height": 4, "width": 3}]')
+
+        self.assertEqual(file_contents, expected_json)
+
+    def test_create(self):
+        """
+        Test cases for the create method
+        """
+        with self.assertRaises(TypeError) as msg:
+            warn = Rectangle.create('Monty Python')
+
+        self.assertEqual(
+            "create() takes 1 positional argument but 2 were given",
+            str(msg.exception)
+        )
+
+        # Test creation of Rectangle with 'id' attribute
+        rect = Rectangle.create(**{'id': 89})
+        self.assertEqual(rect.id, 89)
+
+        # Test creation of Rectangle with 'id' and 'width' attributes
+        rect = Rectangle.create(**{'id': 89, 'width': 1})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+
+        # Test creation of Rectangle with 'id,' 'width,' and 'height' attributes
+        rect = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+
+        # Test creation of Rectangle with 'id,' 'width,' 'height,' and 'x' attributes
+        rect = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.x, 3)
+
+        # Test creation of Rectangle with 'id,' 'width,' 'height,' 'x,' and 'y' attributes
+        rect = Rectangle.create(**{'id': 89, 'width': 1, 'height': 2, 'x': 3, 'y': 4})
+        self.assertEqual(rect.id, 89)
+        self.assertEqual(rect.width, 1)
+        self.assertEqual(rect.height, 2)
+        self.assertEqual(rect.x, 3)
+        self.assertEqual(rect.y, 4)
 
     def test_load_from_file(self):
         """
@@ -162,14 +225,3 @@ class TestBase(unittest.TestCase):
 
         self.assertEqual(warn, str(msg.exception))
 
-    def test_create(self):
-        """
-        Test create method
-        """
-        with self.assertRaises(TypeError) as msg:
-            warn = Rectangle.create('Monty Python')
-
-        self.assertEqual(
-            "create() takes 1 positional argument but 2 were given",
-            str(msg.exception)
-        )

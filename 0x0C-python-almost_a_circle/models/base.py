@@ -63,7 +63,7 @@ class Base:
         json_str = (cls.to_json_string([obj.to_dictionary() for obj in
                     list_objs]) if list_objs else '[]')
         with open(filename, "w", encoding="utf-8") as f:
-            return f.write(json_str)
+            f.write(json_str)
 
     @staticmethod
     def from_json_string(json_string):
