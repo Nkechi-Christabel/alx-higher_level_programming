@@ -76,9 +76,10 @@ class TestSquareMethods(unittest.TestCase):
         self.assertEqual(str(s1), "[Square] (6) 4/5 - 9")
 
     def test_square_inheritance_and_instances(self):
-        """Test Square class: check for inheritance.
-
-        This test case checks the inheritance relationships of the Square class
+        """Test the Square class for inheritance and instance relationships.
+    
+        This test case checks the Square class for its inheritance from Rectangle
+        and verifies the relationships between instances and classes.
 	"""
         s1 = Square(6)
         self.assertTrue(isinstance(s1, Rectangle))
@@ -89,10 +90,10 @@ class TestSquareMethods(unittest.TestCase):
         self.assertFalse(isinstance(Square, Base))
 
     def test_square_inheritance_and_methods(self):
-        """Test Square for methods inherited from Rectangle.
-
-	This test case checks the behavior of the Square class when
-        using methods that are inherited from the Rectangle class.
+        """Test the Square class for inheritance and methods inherited from Rectangle.
+    
+        This test case checks the Square class for its inheritance from Rectangle
+        and the behavior of methods inherited from Rectangle.
 	"""
         s1 = Square(9)
         self.assertEqual(s1.area(), 81)
