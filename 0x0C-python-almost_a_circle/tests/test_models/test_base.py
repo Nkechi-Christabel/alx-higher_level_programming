@@ -134,6 +134,7 @@ class TestBase(unittest.TestCase):
         Rectangle.save_to_file(None)
         with open("Rectangle.json", "r") as file:
             self.assertEqual(file.read(), '[]')
+        os.remove("Rectangle.json")
 
         # Test saving an empty list of Rectangle instances
         Rectangle.save_to_file([])
@@ -168,6 +169,7 @@ class TestBase(unittest.TestCase):
         Square.save_to_file(None)
         with open("Square.json", "r") as file:
             self.assertEqual(file.read(), '[]')
+        os.remove("Square.json")
 
 	# Test saving an empty list to file
         Square.save_to_file([])
