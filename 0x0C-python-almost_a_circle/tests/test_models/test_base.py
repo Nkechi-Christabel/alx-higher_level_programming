@@ -164,17 +164,17 @@ class TestBase(unittest.TestCase):
         expected_json = '[{"id": 10, "x": 1, "size": 4, "y": 2}, {"id": 20, "x": 2, "size": 6, "y": 3}]'
         self.assertEqual(file_contents, expected_json)
 
+        # Test saving None to file
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
+
 	# Test saving an empty list to file
         Square.save_to_file([])
         # Check the contents of the file
         with open('Square.json', 'r') as f:
             file_contents = f.read()
         self.assertEqual(file_contents, '[]')
-
-	# Test saving None to file
-        Square.save_to_file(None)
-        with open("Square.json", "r") as file:
-            self.assertEqual(file.read(), '[]')
 
     def test_create(self):
         """
