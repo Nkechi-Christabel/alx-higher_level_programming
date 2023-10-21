@@ -129,8 +129,11 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(AttributeError) as msg:
             Base.save_to_file([Base(1), Base(2)])
 
+	## Test saving file for Rectangle
         # Test saving with None as input
-        self.assertIsNone(Rectangle.save_to_file(None))
+        Rectangle.save_to_file(None)
+        with open("Rectangle.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
 
         # Test saving an empty list of Rectangle instances
         Rectangle.save_to_file([])
@@ -151,7 +154,7 @@ class TestBase(unittest.TestCase):
               '{"x": 0, "y": 0, "id": 5, "height": 4, "width": 3}]')
         self.assertEqual(file_contents, expected_json)
    
-	# Test saving to file for Square
+	## Test saving to file for Square
         square1 = Square(4, 1, 2, 10)
         square2 = Square(6, 2, 3, 20)
         Square.save_to_file([square1, square2])
@@ -167,6 +170,11 @@ class TestBase(unittest.TestCase):
         with open('Square.json', 'r') as f:
             file_contents = f.read()
         self.assertEqual(file_contents, '[]')
+
+	# Test saving None to file
+        Square.save_to_file(None)
+        with open("Square.json", "r") as file:
+            self.assertEqual(file.read(), '[]')
 
     def test_create(self):
         """
