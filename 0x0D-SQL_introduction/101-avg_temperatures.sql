@@ -4,7 +4,7 @@
 
 SELECT
     city,
-    AVG(value) AS avg_temp
+    AVG(temperature) AS avg_temp
 FROM
     temperatures
 GROUP BY
