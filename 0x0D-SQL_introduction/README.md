@@ -1,5 +1,5 @@
 ## SQL - Introduction
-<img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/272/rtcwz.jpg" alt="Sql representation" width="100%"height="auto"/>
+<img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/272/rtcwz.jpg" alt="Sql representation" width="100%" height="auto" />
 
 ## Learning Objectives
 ### At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
