@@ -1,23 +1,9 @@
 ## SQL - More queries
 
-<img src="https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/3/bc2575fee3303b731031.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20231115%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20231115T191608Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=6640f5127474a55bbeca15d324159eb2d874daeba39fc504b47a2c72789659c5" alt="SQL representation" width="100%"/>
+<img src=https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/66988091.jpg5" alt="SQL representation" width="100%"/>
 
 ## Resources
 ### ___Read or watch:___
-
-- [SQL-Commands-Cheat-Sheet](https://intellipaat.com/mediaFiles/2019/02/SQL-Commands-Cheat-Sheet.pdf)
-
-
-- [SQL technique: subqueries](https://web.csulb.edu/colleges/coe/cecs/dbdesign/dbdesign.php?page=sql/subqueries.php)
-
-
-- [MySQL constraints](https://zetcode.com/mysql/constraints/)
-
-
-- [7 types of SQL JOINs](https://tableplus.com/blog/2018/09/a-beginners-guide-to-seven-types-of-sql-joins.html)
-
-
-- [Derek Banas Tutorial :yum:](https://www.youtube.com/watch?v=yPu6qV5byu4)
 
 - [How To Create a New User and Grant Permissions in MySQL](https://www.digitalocean.com/community/tutorials/how-to-create-a-new-user-and-grant-permissions-in-mysql)
 - [How To Use MySQL GRANT Statement To Grant Privileges To a User](https://www.mysqltutorial.org/mysql-grant.aspx)
