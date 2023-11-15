@@ -1,6 +1,6 @@
 ## SQL - More queries
 
-<img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/66988091.jpg5" alt="SQL representation" width="100%"/>
+<img src="https://s3.amazonaws.com/intranet-projects-files/holbertonschool-higher-level_programming+/274/66988091.jpg" alt="SQL representation" width="100%"/>
 
 ## Resources
 ### ___Read or watch:___
