@@ -3,7 +3,7 @@
 const fs = require('fs');
 const [src1, src2, dest] = process.argv.slice(2);
 
-function callback(err, data) {
+function callback (err, data) {
   if (err) throw err;
 
   fs.appendFile(dest, data, function (err) {
