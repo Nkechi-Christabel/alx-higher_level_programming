@@ -2,7 +2,8 @@
 const Square5 = require('./5-square.js');
 
 module.exports = class Square extends Square5 {
-  charPrint (c) {
-    [...(c || 'X').repeat(this.height)].forEach((ch) => console.log(ch.repeat(this.width)));
-  }
+  charPrint (c = 'X') {
+    for (let i = 0; i < this.height; i++) {
+      console.log(c.repeat(this.width));
+    }
 };
