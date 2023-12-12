@@ -5,8 +5,12 @@ module.exports = class Square extends Rectangle {
   constructor (size) {
     super(size, size);
   }
-
-  charPrint (c) {
+  
+  charPrint(c) {
     [...(c || 'X').repeat(this.height)].forEach((ch) => console.log(ch.repeat(this.width)));
+  }
+
+  print() {
+    this.charPrint();
   }
 };
