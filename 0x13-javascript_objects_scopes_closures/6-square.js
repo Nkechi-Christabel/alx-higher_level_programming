@@ -6,7 +6,7 @@ module.exports = class Square extends Rectangle {
     super(size, size);
   }
 
-  charPrint (c) {
-    [...(c || 'X').repeat(this.height)].forEach((ch) => console.log(ch.repeat(this.width)));
+  charPrint (c = 'X') {
+    [...c.repeat(this.height)].forEach((ch) => console.log(ch.repeat(this.width)));
   }
 };
