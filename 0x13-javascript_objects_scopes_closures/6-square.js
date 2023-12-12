@@ -6,4 +6,5 @@ module.exports = class Square extends Square5 {
     for (let i = 0; i < this.height; i++) {
       console.log(c.repeat(this.width));
     }
+  }
 };
