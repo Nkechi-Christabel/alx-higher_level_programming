@@ -9,6 +9,6 @@ module.exports = class Rectangle {
   }
 
   print () {
-    [...'X'.repeat(this.height)].forEach(ch => console.log(ch.repeat(this.width)));
+    [...'X'.repeat(this.height)].forEach(() => console.log('X'.repeat(this.width)));
   }
 };
