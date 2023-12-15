@@ -2,20 +2,20 @@
 """
 A script that prints all City objects from the database hbtn_0e_14_usa.
 """
-import MySQLdb
 from sys import argv
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from model_state import Base, State
+from model_city import City
 
 if __name__ == "__main__":
-    with MySQLdb.connect(
-        host="localhost", port=3306, user=argv[1], passwd=argv[2], db=argv[3]
-    ) as db_connect:
-        cursor = db_connect.cursor()
-        cursor.execute(
-            "SELECT states.name, cities.id, cities.name FROM cities\
-            INNER JOIN states ON cities.state_id = states.id\
-            ORDER BY id"
-        )
-        data = cursor.fetchall()
+    engine = create_engine(f'mysql://{argv[1]}:{argv[2]}@localhost:\
+                           3306/{argv[3]}')
 
-        for row in data:
-            print("{}: ({}) {}".format(row[0], row[1], row[2]))
+    Base.metadata.create_all(engine)
+
+    Session = sessionmaker(bind=engine)
+    with Session() as session:
+        for city, state in session.query(City, State).join(City)\
+                .order_by(City.id):
+            print("{}: ({}) {}".format(state.name, city.id, city.name))
