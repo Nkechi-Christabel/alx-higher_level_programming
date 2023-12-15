@@ -7,7 +7,7 @@ from sys import argv
 
 if __name__ == "__main__":
     db_connect = MySQLdb.connect(host="localhost", port=3306, user=argv[1],
-                                 passwd=argv[2], db="hbtn_0e_4_usa")
+                                 passwd=argv[2], db=argv[3])
     cursor = db_connect.cursor()
 
     state_name = argv[4]
