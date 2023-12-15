@@ -12,8 +12,6 @@ if __name__ == "__main__":
     cursor = db_connect.cursor()
     cursor.execute("SELECT * FROM states ORDER BY id")
     data = cursor.fetchall()
-
-    for row in data:
-        print(row)
+    print(state for state in data)
 
     db_connect.close()
