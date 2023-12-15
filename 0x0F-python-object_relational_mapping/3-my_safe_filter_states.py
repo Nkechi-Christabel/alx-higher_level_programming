@@ -14,7 +14,7 @@ if __name__ == "__main__":
     cursor = db_connect.cursor()
     state_name = argv[4]
     cursor.execute("SELECT * FROM states WHERE name = %s ORDER BY id",
-		   (state_name,))
+                   (state_name,))
     data = cursor.fetchall()
 
     for row in data:
