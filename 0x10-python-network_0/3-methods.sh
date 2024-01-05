@@ -1,0 +1,3 @@
+#!/bin/bash
+# It takes in a URL and displays all HTTP methods the server will accept.
+curl -sI "$1" | tail -n 2 | head -n 1 | cut -d ' ' -f2-
