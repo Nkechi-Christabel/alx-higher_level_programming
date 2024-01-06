@@ -13,4 +13,4 @@ if __name__ == "__main__":
         with urlopen(sys.argv[1]) as response:
             print(response.read().decode('utf-8'))
     except HTTPError as e:
-        print('Error code: ', e.code)
+        print('Error code:', e.code)
