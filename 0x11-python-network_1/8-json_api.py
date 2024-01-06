@@ -6,12 +6,12 @@ the body of the response using requests package.
 import requests
 import sys
 
-
 if __name__ == "__main__":
-    if len(sys.argv) != 2 or sys.argv[1].isdigit():
-        print("No result")
-    else:
-        q = sys.argv[1]
-        r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
-        j = r.json()
-        print(f"[{j['id']}] {j['name']}" if j else "Not a valid JSON")
+    q = "" if len(sys.argv) != 2 else sys.argv[1]
+
+    response = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
+    try:
+        data = response.json()
+        print(f"[{data['id']}] {data['name']}" if data else "No result")
+    except ValueError:
+        print("Not a valid JSON")
