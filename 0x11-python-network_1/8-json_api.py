@@ -8,12 +8,10 @@ import sys
 
 
 if __name__ == "__main__":
-    q = ""
     if len(sys.argv) != 2 or sys.argv[1].isdigit():
         print("No result")
-        sys.exit()
-
-    q = sys.argv[1]
-    r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
-    j = r.json()
-    print(f"[{j['id']}] {j['name']}" if j else "Not a valid JSON")
+    else:
+        q = sys.argv[1]
+        r = requests.post('http://0.0.0.0:5000/search_user', data={'q': q})
+        j = r.json()
+        print(f"[{j['id']}] {j['name']}" if j else "Not a valid JSON")
