@@ -1,8 +1,6 @@
 #!/usr/bin/node
 
 const request = require('request');
-
-// Get the movie ID from command line arguments
 const movieId = process.argv[2];
 const apiUrl = `https://swapi-api.alx-tools.com/api/films/${movieId}`;
 

@@ -13,9 +13,8 @@ request.get(apiUrl, (error, response, body) => {
   const films = JSON.parse(body).results;
 
   films.forEach(film => {
-    if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
-      count++;
-    }
+    film.characters.forEach(ch => {
+      if (ch.includes(characterId)) count++;
   });
   console.log(count);
 });
