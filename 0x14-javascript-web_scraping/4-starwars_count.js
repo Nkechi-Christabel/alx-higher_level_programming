@@ -15,6 +15,7 @@ request.get(apiUrl, (error, response, body) => {
   films.forEach(film => {
     film.characters.forEach(ch => {
       if (ch.includes(characterId)) count++;
+    });
   });
   console.log(count);
 });
