@@ -18,5 +18,5 @@ request.get(apiUrl, (error, response, body) => {
       completedTasksByUser[userId] = (completedTasksByUser[userId] || 0) + 1;
     }
   });
-    console.log(completedTasksByUser);
+  console.log(completedTasksByUser);
 });
