@@ -3,6 +3,7 @@
 const request = require('request');
 const apiUrl = process.argv[2];
 const characterId = '18';
+let count = 0;
 
 request.get(apiUrl, (error, response, body) => {
   if (error) {
@@ -10,7 +11,6 @@ request.get(apiUrl, (error, response, body) => {
     return;
   }
   const films = JSON.parse(body).results;
-  let count = 0;
 
   films.forEach(film => {
     if (film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)) {
